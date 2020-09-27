@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Source {
+   public static void main(String args[]) {
+       Scanner s = new Scanner(System.in);
+       int n = s.nextInt();
+       reverseInteger(n);
+   }
+
+   // Method to reverse the digits of an integer
+   static void reverseInteger(int num) {
+       boolean neg = false;
+       if(num<0)
+       {
+       neg = true;
+       num *= -1;
+        }
+       int rev_num = 0; 
+        while(num > 0) 
+        { 
+            rev_num = rev_num * 10 + num % 10; 
+            num = num / 10; 
+        } 
+        if(neg)
+            System.out.print("-");
+        System.out.print(rev_num);
+   }
+}
